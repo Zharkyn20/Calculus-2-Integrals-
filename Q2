@@ -8,7 +8,7 @@ plt.show()
 def integrate(x):
     return np.pi*(x-(x**6))
 ans, err = quad(integrate, 0, 1)
-print("Volume of the solid of revolution obtained by rotating this region about x-axist: ", ans) #1.121997376282069
+print("Volume: ", ans)
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1, projection='3d')
 u = np.linspace(0, 1, 60)
