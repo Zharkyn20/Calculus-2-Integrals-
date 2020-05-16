@@ -1,0 +1,24 @@
+import math
+import sympy as sp
+from scipy.integrate import quad
+import numpy as np
+from scipy import integrate
+import matplotlib.pyplot as plt
+
+def f(t):
+    return np.sqrt((np.cos(t)+t*np.sin(t))**2+(np.sin(t)-t*np.cos(t))**2)
+ans = quad(f,0,np.pi)
+print(ans[0])
+
+t = np.linspace(0,np.pi,50)
+def g(t):
+    return (np.cos(t)+t*np.sin(t))**2
+def f1(t):
+    return (np.sin(t)-t*np.cos(t))**2
+def length1(t):
+    return (np.cos(t)+t*np.sin(t))**2+(np.sin(t)-t*np.cos(t))**2
+X = g(t)
+Y = f1(t)
+Length = length1(t)
+plt.plot(X,'b', Y,'r', Length,'y')
+print(Length)
