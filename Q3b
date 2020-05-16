@@ -1,0 +1,12 @@
+import sympy as sp
+x = sp.Symbol('x')
+sp.integrate((3-x**2)**2-(x**2+1)**2,x)
+
+from scipy.integrate import quad
+import numpy as np
+
+def f(x):
+  return (3-x**2)**2-(x**2+1)**2
+
+i = quad(f,-1,1)
+print(i[0])
