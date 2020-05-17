@@ -19,3 +19,19 @@ plt.fill_between (x,y, where = [(x >= -1) and (x<=1) for x in x], color = "black
 plt.fill_between (X,Y, where = [(X > -1) and (X<1) for X in X], color = "white")
 plt.xlim([-2.5, 2.5]); plt.ylim([0,8]);
 plt.show()
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+import sympy as sy
+
+from scipy.integrate import quad
+def f(x): return (5 - x**2)**2
+def h(x): return (x**2 + 3)**2
+x = sy.Symbol('x')
+
+Volume1 = sy.integrate(f(x), (x, -1, 1))
+Volume2 = sy.integrate(h(x), (x, -1, 1))
+TotalV = Volume1 - Volume2
+
+print("Volume is π * " + str(TotalV))
