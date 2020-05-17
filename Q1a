@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import sympy as sy
+
+from scipy.integrate import quad
+def f(x): return (5 - x**2)**2
+def h(x): return (x**2 + 3)**2
+x = sy.Symbol('x')
+
+Volume1 = sy.integrate(f(x), (x, -1, 1))
+Volume2 = sy.integrate(h(x), (x, -1, 1))
+TotalV = Volume1 - Volume2
+
+print("The volume is π * " + str(TotalV))
